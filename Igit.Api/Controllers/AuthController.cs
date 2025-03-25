@@ -18,7 +18,7 @@ public class AuthController(IAuthenticationService authService) : ControllerBase
     /// <param name="request">Request to login</param>
     [HttpPost("authenticate")]
     [AllowAnonymous]
-    public async Task<IActionResult> GetJwtBearerToken([FromBody] LoginRequest request)
+    public async Task<IActionResult> CreateJwtBearerToken([FromBody] LoginRequest request)
     {
         var res = await authService.AuthenticateUserAsync(request);
         return Ok(res);
